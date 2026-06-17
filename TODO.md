@@ -18,4 +18,4 @@
 
 - [ ] Review duplicate books
 - [ ] Standardize file naming
-- [ ] Add cover images (optional)git status
+- [ ] Add cover images (optional)
