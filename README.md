@@ -1,68 +1,57 @@
-# Books
-
-Personal digital library containing books collected for learning, reference, personal growth, literature, and long-term study.
-
-## Categories
-
-### Tech
-
-Computer science, software engineering, programming, architecture, operating systems, databases, networking, and coding interview preparation.
-
-### Finance
-
-Investing, business, entrepreneurship, wealth creation, and financial education.
-
-### Growth
-
-Productivity, habits, leadership, communication, execution, and self-improvement.
-
-### Mind
-
-Psychology, philosophy, mindset, and human behavior.
-
-### Life
-
-Biographies, memoirs, personal journeys, and life lessons.
-
-### Spiritual
-
-Spirituality, religion, wisdom traditions, and self-reflection.
-
-### Stories
-
-Literature, fiction, detective stories, and Bengali classics.
-
-## Repository Structure
-
-```text
-books
-├── finance
-├── growth
-├── life
-├── mind
-├── spiritual
-│   ├── Bhagavad-Gita-Jathajath.pdf
-│   ├── The Alchemist.pdf
-│   └── The Monk Who Sold His Ferrari.pdf
-├── stories
-│   ├── Bengali
-│   │   ├── Hemendra-Kumar-Roy
-│   │   │   ├── Hemendra-Rachanabali-Part-01.pdf
-│   │   │   ├── ...
-│   │   │   └── Hemendra-Rachanabali-Part-27.pdf
-│   │   └── Satyajit-Ray
-│   │       └── Professor-Shonku-Samagra.pdf
-│   └── Detective
-│       └── Bengali
-│           ├── Hemendra-Kumar-Roy
-│           │   └── Goyenda-Omnibus.pdf
-│           ├── Satyajit-Ray
-│           │   └── Feluda/
-│           └── Sharadindu-Bandyopadhyay
-│               └── Byomkesh-Samagra.pdf
-└── tech
-```
+# Roadmap
 
 ## Purpose
 
-This repository serves as a private digital bookshelf and archive of books that support continuous learning and lifelong education.
+This roadmap describes the long-term evolution of the **Books** repository as the source library of the Personal Knowledge Ecosystem (PKE).
+
+---
+
+## Vision
+
+Build a well-organized, scalable, and searchable private digital library that serves as the single source of reference material for research and lifelong learning.
+
+---
+
+## Milestone 1 — Repository Foundation
+
+- Repository governance
+- Repository documentation
+- Library organization principles
+- Reading workflow
+
+## Milestone 2 — Library Organization
+
+- History collection
+- Biography collection
+- Technology collection
+- Fiction collection
+- Archive organization
+
+## Milestone 3 — Library Management
+
+- Classification standard
+- PDF naming standard
+- Reading status management
+- Duplicate and edition management
+
+## Milestone 4 — Research Support
+
+- Kolkata collection
+- West Bengal collection
+- India collection
+- Primary sources
+- Maps and gazetteers
+
+---
+
+## Relationship with Other Repositories
+
+```text
+books (Source Material)
+        ↓
+india (Research)
+        ↓
+foundation (Knowledge)
+```
+
+The Books repository stores original source material only. Research and notes belong in the appropriate repositories.
