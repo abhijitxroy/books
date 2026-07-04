@@ -8,41 +8,55 @@ This roadmap describes the long-term evolution of the **Books** repository as th
 
 ## Vision
 
-Build a well-organized, scalable, searchable, and maintainable private digital library that serves as the single source of reference material for research and lifelong learning.
+Build a research-grade, scalable, searchable, and maintainable source library that preserves books, maps, gazetteers, archives, and reference material for lifelong learning and historical research.
 
 ---
 
-## Milestone 1 — Repository Foundation
-
+## Milestone 1 — Repository Foundation ✅
 - Repository governance
-- Repository documentation
-- Library organization principles
+- Documentation
+- Library organization
 - Reading workflow
 
-## Milestone 2 — Library Organization
-
-- Design the long-term library taxonomy
-- Organize subject collections
-- Establish the history library
-- Establish archive collections
-
-## Milestone 3 — Library Management
-
-- Library classification standard
-- PDF naming standard
-- Reading status management
-- Duplicate and edition management
-- Inventory and catalog
-
-## Milestone 4 — Research Support
-
-- Kolkata collection
-- West Bengal collection
-- India collection
-- Primary sources
+## Milestone 2 — Historical Archive Foundation ✅
+- History collection
+- Kolkata archive
 - Gazetteers
 - Maps
-- Government publications
+- Collection management
+
+## Milestone 3 — Research Bibliography ✅
+- Canonical bibliography
+- 81-book master catalogue
+- Bengali and English research guides
+- Verification workflow
+- Acquisition workflow
+- Reading roadmap
+- Book documentation template
+
+## Milestone 4 — Collection Expansion
+- Acquire remaining books
+- Assign Book IDs
+- Complete bibliographic metadata
+- Expand maps collection
+- Expand gazetteers
+- Add newspapers and journals
+
+## Milestone 5 — Knowledge Extraction
+- Document individual books
+- Timeline extraction
+- People index
+- Places index
+- Event index
+- Cross references
+- Documentary research notes
+
+## Milestone 6 — Regional Expansion
+- West Bengal
+- Bengal
+- India
+- Other cities
+- International history collections
 
 ---
 
@@ -53,7 +67,7 @@ books (Source Material)
         ↓
 india (Research)
         ↓
-foundation (Knowledge)
+essentials (Knowledge)
 ```
 
-The Books repository stores original source material only. Research, notes, summaries, and methodologies belong in their respective repositories.
+The Books repository stores original source material and bibliographic metadata. Research outputs, synthesized knowledge, documentary notes, and learning artifacts belong in downstream repositories such as Essentials and India.

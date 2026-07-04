@@ -1,57 +1,59 @@
-# Roadmap
+# Books
+
+This is the private source-material repository for the Personal Knowledge Ecosystem, containing books, documents, maps, gazetteers, and reference material.
 
 ## Purpose
+- Preserve source material.
+- Organize by subject.
+- Support historical and technical research.
+- Maintain a scalable digital library.
 
-This roadmap describes the long-term evolution of the **Books** repository as the source library of the Personal Knowledge Ecosystem (PKE).
+## Repository Structure
+```
+finance/
+growth/
+history/
+  └── kolkata/
+       ├── bibliography/
+       ├── books/
+       ├── gazetteers/
+       └── maps/
+life/
+mind/
+spiritual/
+stories/
+tech/
+docs/
+reading/
+notes/
+```
 
----
+## Research Workflow
+1. Acquire source.  
+2. Organize library.  
+3. Verify metadata.  
+4. Catalogue.  
+5. Read.  
+6. Research.  
+7. Produce knowledge artifacts.
 
-## Vision
+## Documentation
+- **CHANGELOG.md**: Record of changes and updates to the repository.  
+- **ROADMAP.md**: Strategic plan outlining repository milestones and goals.  
+- **TODO.md**: List of tasks and planned improvements.  
+- **docs/**: Supporting documentation and guides.  
+- **reading/**: Reading notes and workflows.
 
-Build a well-organized, scalable, and searchable private digital library that serves as the single source of reference material for research and lifelong learning.
-
----
-
-## Milestone 1 — Repository Foundation
-
-- Repository governance
-- Repository documentation
-- Library organization principles
-- Reading workflow
-
-## Milestone 2 — Library Organization
-
-- History collection
-- Biography collection
-- Technology collection
-- Fiction collection
-- Archive organization
-
-## Milestone 3 — Library Management
-
-- Classification standard
-- PDF naming standard
-- Reading status management
-- Duplicate and edition management
-
-## Milestone 4 — Research Support
-
-- Kolkata collection
-- West Bengal collection
-- India collection
-- Primary sources
-- Maps and gazetteers
-
----
+## Kolkata Documentary Project
+This repository contains a research-grade bibliography system, book collection, gazetteers, maps, and documentary resources focused on the history of Kolkata.
 
 ## Relationship with Other Repositories
-
 ```text
 books (Source Material)
         ↓
 india (Research)
         ↓
-foundation (Knowledge)
+essentials (Knowledge)
 ```
 
-The Books repository stores original source material only. Research and notes belong in the appropriate repositories.
+This repository stores source material only, while synthesized research belongs in the appropriate downstream repositories.

@@ -2,9 +2,9 @@
 
 ## Purpose
 
-The **History** collection is the historical source library within the **Books** repository. It contains books, archival publications, maps, gazetteers, and other reference material used for historical research and documentary projects.
+The **History** collection is the historical source library within the **Books** repository. It preserves books, primary sources, gazetteers, maps, archival publications, and other reference material that support historical research and documentary projects.
 
-This repository stores **source material only**. Research notes, timelines, biographies, and documentary content belong in the `india` repository.
+This repository stores original source material and bibliographic metadata. Synthesized research, timelines, biographies, documentary scripts, and knowledge artifacts belong in downstream repositories such as **India** and **Essentials**.
 
 ---
 
@@ -23,6 +23,13 @@ The collection includes:
 - Gazetteers
 - Historical maps
 - Archival publications
+- Urban history
+- Economic history
+- Social history
+- Religious history
+- Newspapers
+- Journals
+- Documentary reference material
 
 ---
 
@@ -33,9 +40,11 @@ history/
 ├── world/
 ├── asia/
 ├── india/
+│   ├── README.md
 │   └── states/
 │       └── west-bengal/
-│           ├── kolkata/
+│           ├── cities/
+│           │   └── kolkata/
 │           └── districts/
 ├── primary-sources/
 ├── maps/
@@ -45,13 +54,14 @@ history/
 
 ---
 
-## Organization Principles
+## Research Principles
 
-- Organize by subject and geography.
-- Store each title in one primary location.
 - Preserve original source material.
-- Keep multi-volume works together.
-- Avoid duplicate copies.
+- Maintain accurate bibliographic metadata.
+- Organize by geography and subject.
+- Keep a single canonical copy of each work.
+- Track acquisition and verification.
+- Separate source material from synthesized knowledge.
 
 ---
 
@@ -62,7 +72,7 @@ Books (Source Material)
         ↓
 India (Research)
         ↓
-Foundation (Knowledge)
+Essentials (Knowledge)
 ```
 
-The History collection provides the evidence base for historical research across the ecosystem and will continue to expand as new source material is acquired.
+The History collection provides the evidence base for historical research throughout the Personal Knowledge Ecosystem. As the repository grows, it will expand from Kolkata to West Bengal, India, and broader world history while maintaining rigorous bibliographic and archival standards.

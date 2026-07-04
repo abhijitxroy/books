@@ -1,29 +1,34 @@
-# Kolkata History Collection
+# Kolkata Documentary Collection
 
 ## Purpose
 
-The **Kolkata** collection contains books and historical reference material related to the history, development, culture, architecture, administration, society, economy, and heritage of Kolkata. It serves as the primary source library for documentary research and historical documentation about the city.
+The **Kolkata Documentary Collection** is a research-grade historical source library dedicated to Kolkata. It preserves books, primary sources, gazetteers, maps, archival publications, newspapers, journals, photographs, and documentary reference material required for studying the city's history from its earliest settlements to the modern metropolis.
+
+The collection is designed to support documentary production, historical research, and knowledge extraction while maintaining rigorous bibliographic standards and long-term maintainability.
 
 ---
 
 ## Scope
-
-The collection includes:
-
 - Origins of Kolkata
-- Sutanuti, Govindapur, and Kalikata
-- East India Company period
-- British Calcutta
-- Presidency capital
+- Sutanuti, Govindapur and Kalikata
+- East India Company
+- Fort William
+- Colonial administration
 - Urban development
 - Architecture and heritage
+- Society and culture
+- Bengal Renaissance
+- Economy and trade
+- Religion and festivals
 - Streets and neighbourhoods
-- Culture and literature
-- Trade and commerce
-- Transport and infrastructure
-- Maps and gazetteers
-- Historical biographies
-- Documentary reference books
+- Transport
+- Maps
+- Gazetteers
+- Newspapers
+- Journals
+- Biographies
+- Primary sources
+- Documentary reference material
 
 ---
 
@@ -31,33 +36,37 @@ The collection includes:
 
 ```text
 kolkata/
-├── colonial-history/
-├── urban-development/
-├── architecture/
-├── heritage/
-├── streets/
-├── biographies/
-├── maps/
+├── bibliography/
+├── books/
 ├── gazetteers/
-├── primary-sources/
-└── documentary/
+├── maps/
+├── README.md
+├── INDEX.md
+├── COLLECTION-PLAN.md
+├── ACQUISITION.md
+├── WANTED.md
 ```
 
 ---
 
-## Organization Principles
-
-- Organize books by their primary historical focus.
-- Keep multi-volume works together.
+## Research Principles
 - Preserve original source material.
-- Store each title in one primary location.
-- Reference books from the `india` repository instead of duplicating them.
+- Maintain accurate bibliographic metadata.
+- Keep one canonical record for each book.
+- Organize by research domain.
+- Separate source material from synthesized knowledge.
+- Maintain verifiable documentary evidence.
 
 ---
 
-## Initial Core Collection
-
-The first collection will focus on authoritative English and Bengali works covering Kolkata's history, including colonial records, modern research, gazetteers, maps, and documentary reference books.
+## Current Status
+- Research-grade bibliography framework established.
+- Initial master catalogue of 81 Kolkata-related books.
+- Bengali and English research guides.
+- Acquisition and verification workflows.
+- Public-domain tracking.
+- Reading roadmap.
+- Foundation prepared for long-term documentary research.
 
 ---
 
@@ -68,7 +77,7 @@ Books (Source Material)
         ↓
 India (Research)
         ↓
-Foundation (Knowledge)
+Essentials (Knowledge)
 ```
 
-This collection is the long-term source library for all Kolkata-related documentary, historical, and heritage research.
+The Kolkata Documentary Collection serves as the authoritative source library for all Kolkata-related research across the Personal Knowledge Ecosystem. Future work will focus on expanding the collection, enriching bibliographic metadata, documenting individual books, and extracting structured historical knowledge for documentary production.
