@@ -64,3 +64,32 @@
 
 | Date | Book ID | Change | Verified By |
 |------|---------|--------|-------------|
+---
+
+# Missing from MASTER-BOOKS
+
+The following books are present in the repository but are not yet fully reconciled with the master catalogue. Each item must be verified before adding a new entry or linking to an existing one.
+
+## Bengali
+
+- KOL-BN-004 - Kolkata Darpan - Vol 2
+- KOL-BN-007 - Kolkatar Rajkahini
+- KOL-BN-011 - Kolkatar Pathghat
+- KOL-BN-012 - Paschimbanger Sanskriti
+- KOL-BN-013 - Banglar Samajik Itihaser Dhara
+- KOL-BN-014 - Banglar Samajik Itihas
+- KOL-BN-015 - Sekal Aar Ekal
+- KOL-BN-104 - Purbo-Paschim
+- KOL-BN-105 - Chowringhee
+- KOL-BN-106 - Jana Aranya
+
+## English
+
+- KOL-EN-001 - Calcutta Old and New
+- KOL-EN-002 - Calcutta Past and Present
+- KOL-EN-004 - Recollections of Calcutta for Over Half a Century
+- KOL-EN-502 - Old Fort William in Bengal - Vol 2
+- KOL-EN-511 - Bengal in 1756-57 - Vol 1
+- KOL-EN-512 - Bengal in 1756-57 - Vol 2
+- KOL-EN-513 - Bengal in 1756-57 - Vol 3
+
