@@ -27,13 +27,33 @@ The collection includes:
 
 ```text
 west-bengal/
-├── kolkata/
-├── districts/
-├── culture/
-├── heritage/
-├── biographies/
-└── documentary/
+├── README.md
+├── cities/
+│   └── kolkata/
+│       ├── bibliography/
+│       ├── books/
+│       ├── gazetteers/
+│       └── maps/
+└── districts/
 ```
+
+---
+
+## Bibliography
+
+Each city or region maintains its own bibliography that acts as the research catalog for the collection.
+
+For Kolkata, the bibliography contains:
+
+- `MASTER-BOOKS.md` — Canonical list of verified books.
+- `BENGALI-BOOKS.md` — Verified Bengali bibliography.
+- `ENGLISH-BOOKS.md` — Verified English bibliography.
+- `CANDIDATE-BOOKS.md` — Acquisition pipeline for newly discovered books.
+- `AUTHORS.md` — Major authors and their bibliography.
+- `RESEARCH-NOTES.md` — Research notes, verification, edition comparison, and unresolved questions.
+- `WANTED.md` — Verified books still missing from the collection.
+- `PUBLIC-DOMAIN.md` — Legally available public-domain resources.
+- `READING-ORDER.md` — Recommended learning roadmap.
 
 ---
 
@@ -46,14 +66,29 @@ west-bengal/
 
 ---
 
-## Relationship within the Personal Knowledge Ecosystem
+## Collection Workflow
 
 ```text
-Books (Source Material)
-        ↓
-India (Research)
-        ↓
-Foundation (Knowledge)
+New Book
+    ↓
+Candidate List
+    ↓
+Research & Verification
+    ↓
+Verified
+    ↓
+Master Books
+    ├── Bengali Books
+    ├── English Books
+    ├── Wanted
+    ├── Public Domain
+    └── Reading Order
 ```
 
-This collection provides the source material for research on West Bengal and will continue to grow as new books, archival works, maps, and historical references are added.
+Workflow principles:
+
+- Every discovered book is recorded before acquisition.
+- Only verified books become part of the master bibliography.
+- Language-specific bibliographies are derived from the master list.
+- Reading order is maintained independently from acquisition order.
+- Research notes capture verification history and edition differences.

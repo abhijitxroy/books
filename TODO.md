@@ -1,42 +1,19 @@
 # TODO
 
-## Personal Knowledge Ecosystem (PKE)
+## Backlog
 
-### Books Milestone 1 — Repository Foundation
+### Repository
+- [ ] Review duplicate books
+- [ ] Add cover images (optional)
+- [ ] Review repository consistency
 
-- [x] Review and improve `README.md`.
-- [x] Create `ROADMAP.md`.
-- [x] Update `CHANGELOG.md`.
-- [ ] Define library classification standard.
-- [ ] Define PDF naming standard.
-- [ ] Define reading workflow.
-
----
-
-## Books Repository
-
-## Library
-
+### Library
 - [ ] Add remaining books from personal collection
 - [ ] Add international fiction collection
-- [x] Add Bengali literature collection
-- [x] Add reading status tracking
 
-## Reading Notes
-
-- [x] Create notes directory
-- [ ] Add book summaries
-- [ ] Add key takeaways
-- [x] Link notes to books
-
-## Organization
-
-- [ ] Review duplicate books
-- [x] Standardize file naming
-- [ ] Add cover images (optional)
-
-
-# TODO
+### Reading
+- [ ] Add key takeaways for completed books
+- [ ] Track reading progress
 
 ## Milestone 1 — Repository Foundation ✅
 - [x] Repository structure
@@ -76,7 +53,8 @@
 
 ## Milestone 4 — Collection Expansion
 - [ ] Acquire remaining Kolkata books
-- [ ] Assign permanent Book IDs
+- [ ] Complete per-book folder structure
+- [ ] Complete per-book summary files
 - [ ] Complete bibliographic metadata
 - [ ] Verify publication details
 - [ ] Verify editions
@@ -84,17 +62,19 @@
 - [ ] Expand gazetteers collection
 - [ ] Add newspapers
 - [ ] Add journals
+- [ ] Add archival documents
 
 ---
 
 ## Milestone 5 — Knowledge Extraction
-- [ ] Create documentation for individual books
+- [ ] Complete book summaries
 - [ ] Extract timelines
 - [ ] Build people index
 - [ ] Build places index
 - [ ] Build event index
-- [ ] Add cross references
+- [ ] Cross-reference books, maps, gazetteers and archival sources
 - [ ] Add documentary research notes
+- [ ] Add reading notes and historical insights
 
 ---
 
@@ -104,3 +84,4 @@
 - [ ] India historical archive
 - [ ] Additional city collections
 - [ ] International history collections
+- [ ] Kolkata documentary production

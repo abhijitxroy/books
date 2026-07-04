@@ -9,15 +9,21 @@ This is the private source-material repository for the Personal Knowledge Ecosys
 - Maintain a scalable digital library.
 
 ## Repository Structure
-```
+```text
 finance/
 growth/
 history/
-  └── kolkata/
-       ├── bibliography/
-       ├── books/
-       ├── gazetteers/
-       └── maps/
+└── india/
+    └── states/
+        └── west-bengal/
+            └── cities/
+                └── kolkata/
+                    ├── bibliography/
+                    ├── books/
+                    ├── gazetteers/
+                    ├── maps/
+                    ├── templates/
+                    └── notes/
 life/
 mind/
 spiritual/
@@ -28,14 +34,27 @@ reading/
 notes/
 ```
 
+## Kolkata Book Structure
+
+Each managed book follows a standardized folder layout:
+
+```text
+KOL-BN-001 - Book Title - Author/
+├── KOL-BN-001 - Book Title - Author.pdf
+└── KOL-BN-001 - Book Title - Author.summary.md
+```
+
+The `.summary.md` file stores bibliographic metadata, research notes, historical context, and reading progress for the corresponding book.
+
 ## Research Workflow
-1. Acquire source.  
-2. Organize library.  
-3. Verify metadata.  
-4. Catalogue.  
-5. Read.  
-6. Research.  
-7. Produce knowledge artifacts.
+1. Acquire source.
+2. Verify bibliographic metadata.
+3. Assign Book ID.
+4. Organize into the standardized folder structure.
+5. Generate the book summary file.
+6. Read and annotate.
+7. Cross-reference with maps, gazetteers, people, places, and events.
+8. Produce research and knowledge artifacts.
 
 ## Documentation
 - **CHANGELOG.md**: Record of changes and updates to the repository.  
@@ -45,7 +64,8 @@ notes/
 - **reading/**: Reading notes and workflows.
 
 ## Kolkata Documentary Project
-This repository contains a research-grade bibliography system, book collection, gazetteers, maps, and documentary resources focused on the history of Kolkata.
+
+This repository contains a structured Kolkata history research library, including bibliographies, books, gazetteers, historical maps, documentary resources, and standardized per-book research summaries.
 
 ## Relationship with Other Repositories
 ```text

@@ -4,6 +4,38 @@ All notable changes to this repository are documented in this file.
 
 ---
 
+## [1.3.0] - 2026-07-04
+
+### Added
+
+#### Book Organization
+- Introduced a standardized per-book folder structure.
+- Added a `.summary.md` research file for every managed Kolkata book.
+- Added reusable `BOOK-SUMMARY-TEMPLATE.md` and `BOOK-NOTES-TEMPLATE.md` templates.
+- Added dedicated `templates/` directory for reusable research templates.
+
+#### Documentation
+- Updated the repository documentation to reflect the Kolkata research library architecture.
+- Updated the research workflow and repository structure.
+- Refined the project roadmap and TODO milestones.
+
+### Changed
+
+#### Collection Structure
+- Reorganized every owned Kolkata book into its own directory.
+- Standardized Bengali and English book naming conventions.
+- Standardized placeholder book directories for planned acquisitions.
+- Improved consistency across books, bibliography, maps, and gazetteers.
+
+#### Research Workflow
+- Established per-book research summaries as the primary metadata location.
+- Separated repository architecture from research content.
+
+### Notes
+- This release marks the completion of the initial Kolkata research library architecture. Future releases will primarily focus on bibliographic verification, research summaries, historical knowledge extraction, and collection expansion.
+
+---
+
 ## [1.2.0] - 2026-07-04
 
 ### Added

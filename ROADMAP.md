@@ -36,20 +36,22 @@ Build a research-grade, scalable, searchable, and maintainable source library th
 
 ## Milestone 4 — Collection Expansion
 - Acquire remaining books
-- Assign Book IDs
-- Complete bibliographic metadata
+- Complete per-book folder structure
+- Complete per-book summary files
+- Verify bibliographic metadata
 - Expand maps collection
 - Expand gazetteers
-- Add newspapers and journals
+- Add newspapers, journals, and archival documents
 
 ## Milestone 5 — Knowledge Extraction
-- Document individual books
+- Complete book summaries
 - Timeline extraction
 - People index
 - Places index
 - Event index
-- Cross references
+- Cross references between books, maps, gazetteers, and archival sources
 - Documentary research notes
+- Reading notes and historical insights
 
 ## Milestone 6 — Regional Expansion
 - West Bengal
@@ -70,4 +72,4 @@ india (Research)
 essentials (Knowledge)
 ```
 
-The Books repository stores original source material and bibliographic metadata. Research outputs, synthesized knowledge, documentary notes, and learning artifacts belong in downstream repositories such as Essentials and India.
+The Books repository is the canonical source library for the Personal Knowledge Ecosystem. It stores original source material, bibliographic metadata, per-book summaries, maps, gazetteers, and archival resources. Research outputs, synthesized knowledge, documentary scripts, and learning artifacts belong in downstream repositories such as India and Essentials.
