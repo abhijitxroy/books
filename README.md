@@ -6,25 +6,38 @@ This is the private source-material repository for the Personal Knowledge Ecosys
 
 | Metric | Value |
 |--------|------:|
-| PDFs | 82 |
-| Book Summary Files | 82 |
+| History PDFs | 82 |
+| History Summary Files | 82 |
+| Kolkata Books | 80 |
+| India Reference Books | 2 |
 | Kolkata Bibliography Entries | 79 |
 | Repository Status | Active |
 
 ## Purpose
 - Preserve source material.
-- Organize by subject.
+- Organize a scalable digital library.
 - Support historical and technical research.
-- Maintain a scalable digital library.
+- Maintain standardized metadata and bibliographies.
 
 ## Repository Structure
 ```text
 finance/
 growth/
 history/
+├── archives/
+├── asia/
+├── gazetteers/
+├── maps/
+├── primary-sources/
+├── world/
 └── india/
+    ├── books/
+    │   ├── IND-EN-001 - History of India - Vol 1 - John Marshman/
+    │   ├── IND-EN-002 - History of India - Vol 2 - John Marshman/
+    │   └── ...
     └── states/
         └── west-bengal/
+            ├── districts/
             └── cities/
                 └── kolkata/
                     ├── bibliography/
@@ -33,6 +46,7 @@ history/
                     ├── maps/
                     ├── templates/
                     └── notes/
+
 life/
 mind/
 spiritual/
@@ -58,47 +72,37 @@ The `.summary.md` file stores bibliographic metadata, research notes, historical
 ## Book ID Convention
 
 ```
-KOL-BN-001  → Bengali book
-KOL-EN-001  → English book
+KOL-BN-001  → Kolkata Bengali
+KOL-EN-001  → Kolkata English
+IND-EN-001  → India Reference
 ```
 
-Each managed book is stored in its own directory containing the source PDF and a matching summary file.
-```
-KOL-BN-001 - Book Title - Author/
-├── KOL-BN-001 - Book Title - Author.pdf
-└── KOL-BN-001 - Book Title - Author.summary.md
-```
+### Repository Workflow
 
-## Research Workflow
-1. Acquire source.
-2. Verify bibliographic metadata.
-3. Assign Book ID.
-4. Organize into the standardized folder structure.
-5. Generate the book summary file.
-6. Read and annotate.
-7. Cross-reference with maps, gazetteers, people, places, and events.
-8. Produce research and knowledge artifacts.
+This repository manages the acquisition, organization, and bibliographic management of source material. Historical research and knowledge extraction are performed in downstream repositories.
 
-## Research Pipeline
+### Library Management Workflow
 
 ```text
-Discover
-    ↓
-Bibliography
-    ↓
+Discover Book
+      ↓
+Evaluate Relevance
+      ↓
 Acquire Source
-    ↓
-Verify Metadata
-    ↓
+      ↓
+Verify Bibliographic Metadata
+      ↓
+Classify Collection
+      ↓
 Assign Book ID
-    ↓
+      ↓
 Organize Repository
-    ↓
-Create Summary
-    ↓
-Research & Annotation
-    ↓
-Knowledge Extraction
+      ↓
+Create / Update Summary
+      ↓
+Update Bibliography
+      ↓
+Ready for Downstream Research
 ```
 
 ## Documentation
@@ -106,13 +110,13 @@ Knowledge Extraction
 - **ROADMAP.md**: Strategic plan outlining repository milestones and goals.  
 - **TODO.md**: List of tasks and planned improvements.  
 - **docs/**: Supporting documentation and guides.  
-- **reading/**: Reading notes and workflows.
+- **reading/**: Reading status, workflows, and tracking.
 
 ## Kolkata Documentary Project
 
-This repository contains a structured Kolkata history research library, including bibliographies, books, gazetteers, historical maps, documentary resources, and standardized per-book research summaries.
+This repository contains a structured historical source library centered on Kolkata and supplemented by India-level reference works. It includes bibliographies, books, gazetteers, historical maps, documentary resources, and standardized per-book research summaries.
 
-The collection is organized into specialized subject areas including General History, Colonial History, Heritage, Urban Development, Primary Sources, Art & Culture, Biographies, Economy, Streets, Memoirs, and Historical Fiction. The repository is designed to support long-term historical research rather than simply archive PDFs.
+The collection is organized into specialized subject areas including General History, Colonial History, Heritage, Urban Development, Primary Sources, Art & Culture, Biographies, Economy, Streets, Memoirs, and Historical Fiction. It is designed to preserve authoritative source material and provide a solid foundation for long-term historical research and documentary projects.
 
 ## Repository Principles
 
@@ -125,26 +129,31 @@ The collection is organized into specialized subject areas including General His
 
 ## Relationship with Other Repositories
 ```text
-books (Source Material)
-        ↓
-india (Research)
-        ↓
-essentials (Knowledge)
+books
+(Source Material Repository)
+        │
+        ▼
+india
+(Historical Research Repository)
+        │
+        ▼
+essentials
+(Knowledge Repository)
 ```
 
-This repository stores source material only, while synthesized research belongs in the appropriate downstream repositories.
+This repository stores curated source material and associated research metadata. Historical analysis, synthesized knowledge, timelines, documentary preparation, and other derived research are maintained in downstream repositories.
 
 ## Current Status
 
-**Current Release:** v1.3.0 — Kolkata Research Library Architecture
+**Current Release:** v1.4.0 — Expanded Kolkata Historical Research Library
 
-This release completes the foundational architecture of the Kolkata Historical Research Library, transforming the repository from a collection of PDFs into a structured, research-oriented digital library with standardized organization, reusable templates, and a scalable historical research workflow.
+This release expands the historical source collection, introduces India-level reference books, and further strengthens the repository as a structured historical source library.
 
-- ✅ Repository architecture established
-- ✅ Standardized book hierarchy
-- ✅ Kolkata Book ID system implemented
-- ✅ Master bibliography established
-- ✅ Per-book summary framework completed
-- ✅ Research templates implemented
-- 🚧 Bibliographic verification and metadata enrichment in progress
-- 🎯 Next milestone: Historical Research & Knowledge Extraction
+- ✅ 82 managed history books
+- ✅ 82 research summary files
+- ✅ 80 organized Kolkata books
+- ✅ 2 India reference books
+- ✅ Expanded subject-based organization
+- ✅ Master bibliography maintained
+- 🚧 Bibliographic verification and metadata enrichment ongoing
+- 🎯 Next milestone: Historical Knowledge Extraction
