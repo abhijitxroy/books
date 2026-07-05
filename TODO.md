@@ -6,6 +6,8 @@
 - [ ] Review duplicate books
 - [ ] Add cover images (optional)
 - [ ] Review repository consistency
+- [ ] Create category README files
+- [ ] Keep README, CHANGELOG and ROADMAP synchronized for each release
 
 ### Library
 - [ ] Add remaining books from personal collection
@@ -39,7 +41,7 @@
 
 ## Milestone 3 — Research Bibliography ✅
 - [x] Canonical bibliography (`MASTER-BOOKS.md`)
-- [x] Initial catalogue of 81 books
+- [x] Initial catalogue of 79 master bibliography entries
 - [x] Bengali research guide
 - [x] English research guide
 - [x] Candidate evaluation workflow
@@ -51,11 +53,15 @@
 
 ---
 
-## Milestone 4 — Collection Expansion
+## Milestone 4 — Collection Expansion & Verification
 - [ ] Acquire remaining Kolkata books
-- [ ] Complete per-book folder structure
-- [ ] Complete per-book summary files
-- [ ] Complete bibliographic metadata
+- [x] Complete per-book folder structure
+- [x] Complete per-book summary files
+- [ ] Update MASTER-BOOKS.md verification status
+- [ ] Complete publisher metadata
+- [ ] Complete publication year metadata
+- [ ] Complete edition metadata
+- [ ] Complete ISBN metadata (where available)
 - [ ] Verify publication details
 - [ ] Verify editions
 - [ ] Expand maps collection
@@ -67,6 +73,9 @@
 ---
 
 ## Milestone 5 — Knowledge Extraction
+- [ ] Review all 82 book summaries
+- [ ] Extract key historical themes
+- [ ] Build chronological timeline
 - [ ] Complete book summaries
 - [ ] Extract timelines
 - [ ] Build people index

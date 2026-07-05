@@ -4,6 +4,34 @@ All notable changes to this repository are documented in this file.
 
 ---
 
+
+## [Unreleased]
+
+### Added
+
+#### Kolkata Collection
+- Organized the Kolkata research library into 82 standardized book directories.
+- Expanded the managed collection to 82 PDFs with matching `.summary.md` files.
+- Added additional categorized books covering colonial history, heritage, biographies, primary sources, art & culture, streets, urban development, economy, memoirs, and historical fiction.
+
+#### Documentation
+- Expanded the root README with repository statistics, research pipeline, repository principles, and current project status.
+- Updated ROADMAP to reflect the current verification and knowledge-extraction phases.
+- Updated TODO to track metadata verification and research infrastructure tasks.
+
+### Changed
+
+#### Bibliography
+- Continued synchronization of `MASTER-BOOKS.md` with the organized repository.
+- Improved consistency between Book IDs, folder structure, and bibliography records.
+
+#### Repository Maintenance
+- Removed temporary import artifacts and cleaned the working tree.
+- Standardized repository documentation to match the current architecture.
+
+### Notes
+- This development cycle focuses on repository consistency, bibliographic verification, and preparing the project for the next tagged release.
+
 ## [1.3.0] - 2026-07-04
 
 ### Added
@@ -48,7 +76,7 @@ All notable changes to this repository are documented in this file.
 #### Kolkata Documentary Project
 - Established a research-grade bibliography subsystem.
 - Added `MASTER-BOOKS.md` as the canonical bibliography.
-- Catalogued the initial master bibliography containing 81 Kolkata-related books.
+  - Catalogued the initial master bibliography containing 79 Kolkata-related books.
 - Added curated Bengali and English reading guides.
 - Added candidate book evaluation workflow.
 - Added bibliographic verification tracker.
