@@ -26,24 +26,25 @@
 - Pather Panchali (Literary Fiction)
 - Aparajito (Coming-of-Age Fiction)
 - Ichhamati (Historical Fiction)
-- Meghmallar (Short Story Collection)
+- Meghomallar (Short Story Collection)
+- Abhijatrik (Travel Literature)
 
 ## Recommended Reading Order
 
 1. Chander Pahar (Adventure)
-2. Aranyak (Nature / Jungle Literature)
+2. Aranyak (Nature and Jungle Literature)
 3. Pather Panchali (Literary Classic)
-4. Aparajito (Coming-of-Age / Travel)
+4. Aparajito (Coming-of-Age Fiction)
 5. Adarsha Hindu Hotel (Social Fiction)
 6. Ichhamati (Historical Fiction)
 7. Ashani Sanket (Historical Fiction)
-8. Bane-Pahare (Travel Literature)
-9. Abhijatrik (Travel Diary)
-10. Meghmallar (Short Story Collection)
+8. Abhijatrik (Travel Diary)
+9. Bane-Pahare (Travel Literature)
+10. Meghomallar (Begin Your Short Story Journey)
 
 ---
 
-## Complete Bibliography (Chronological Order)
+## Selected Important Works (Chronological Order)
 
 | No. | Title | Genre | Recommendation |
 |-----|-------|-------|---------------|
@@ -93,29 +94,6 @@
 4. Nabagata
 5. Talnabami
 
-### Highly Recommended
-
-1. Mukhosh O Mukhoshri
-2. Chhayachhabi
-3. Kushal Pahari
-4. Janma O Mrityu
-5. Kinnar Dal
-6. Benigir Phulbari
-7. Anusandhan
-
-### Recommended
-
-1. Asadharan
-2. Upalkhanda
-3. Bidhumaster
-
-### For Completionists
-
-1. Kshanabhangur
-2. Acharya Kripalani Colony
-3. Jyotiringan
-4. Ruphalud
-
 ## Genre Wise Recommendations
 
 ### Adventure
@@ -141,11 +119,11 @@
 
 ### Short Stories
 
-- Meghmallar
-- Mauri Phul
-- Jatrabadal
-- Nabagata
-- Talnabami
+- Meghomallar
+- Mouriful
+- Jatrabodol
+- Nobagoto
+- Talnabomi
 
 ---
 
@@ -165,20 +143,20 @@
 
 1. Chander Pahar
 2. Aranyak
-3. Bane-Pahare
-4. Abhijatrik
+3. Abhijatrik
+4. Bane-Pahare
 5. Kedar Raja
 6. Mismider Koboch
 
 ### Must Read Short Story Collections
 
-1. Meghmallar
-2. Mauri Phul
-3. Jatrabadal
-4. Nabagata
-5. Talnabami
+1. Meghomallar
+2. Mouriful
+3. Jatrabodol
+4. Nobagoto
+5. Talnabomi
 
-> If you are interested primarily in adventure, travel, jungle literature, and literary classics, begin with Chander Pahar, Aranyak, Pather Panchali, Aparajito, and Ichhamati. For short stories, start with Meghmallar, Mauri Phul, Nabagata, and Talnabami. Together they represent some of the finest works of Bibhutibhushan Bandyopadhyay.
+> New readers should begin with Chander Pahar, Aranyak, Pather Panchali, Aparajito, and Ichhamati. Together they provide an excellent introduction to Bibhutibhushan Bandyopadhyay's adventure, literary, nature, and historical writings. For short stories, begin with Meghmallar, Mauri Phul, Nabagata, and Talnabami.
 
 ## Notable Contributions
 
