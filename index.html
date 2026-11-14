@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="A searchable catalogue of books.">
-<title>Books Library — Searchable Catalogue</title>
+<meta name="description" content="Books Library — a personal collection of books.">
+<title>Books Library</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='2' y='2' width='44' height='44' rx='10' fill='%231e4c91'/%3E%3Cpath d='M10 12.5c5.3-1.8 10.2-.8 14 2.2v22c-4-3-8.7-4-14-2.2z' fill='white' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M38 12.5c-5.3-1.8-10.2-.8-14 2.2v22c4-3 8.7-4 14-2.2z' fill='%23dce9f8' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M24 14.5v22' stroke='%231e4c91' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f6f8fb;--panel:#fff;--ink:#172033;--muted:#617087;--line:#dfe5ee;--accent:#0071c5;--nav:#0b1929;--yellow:#fff176}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
@@ -28,22 +30,50 @@
 .category-card{scroll-margin-top:16px}
 @media(max-width:620px){.quick-panel{padding:14px}.quick-head{display:block}.back-link{display:inline-block;margin-top:8px}.quick-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.page-jump{right:10px;bottom:12px}.page-jump a{width:38px;height:38px}}
 
+
+.bn-text{font-family:"Noto Sans Bengali","Noto Serif Bengali","Vrinda",sans-serif;font-size:13px;line-height:1.7;letter-spacing:normal;font-feature-settings:normal;font-kerning:normal}
+.column-menu{position:relative;margin-left:auto}.column-menu>summary{list-style:none;cursor:pointer;border:1px solid #d3deea;border-radius:6px;background:#fff;color:#315b80;padding:8px 11px;font-size:12px}.column-menu>summary::-webkit-details-marker{display:none}.column-menu[open]>summary{background:#edf6ff;border-color:#9fc8e8}.column-options{position:absolute;right:0;top:calc(100% + 6px);z-index:8;min-width:190px;max-height:300px;overflow:auto;padding:10px;background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 24px #10243b22}.column-options label{display:flex;align-items:center;gap:8px;padding:6px 4px;font-size:12px;white-space:nowrap;cursor:pointer}.column-options input{accent-color:var(--accent)}.table [hidden]{display:none!important}
+
+/* v10 refinements */
+.search-panel{max-width:760px;width:100%;margin:0 auto 28px;padding:0;border:0;background:transparent;box-shadow:none}
+.search-line{position:relative;align-items:center;gap:0;border:1px solid #d8dee8;border-radius:999px;background:#fff;padding:5px 7px 5px 18px;box-shadow:0 2px 9px #17203312;transition:box-shadow .18s ease,border-color .18s ease}
+.search-line:focus-within{border-color:#a8c8e8;box-shadow:0 3px 16px #174c7b20}
+.search-line input{border:0!important;outline:0!important;box-shadow:none!important;background:transparent;padding:12px 10px;font-size:16px}
+.search-line input:focus{outline:0!important}
+.search-icon{width:21px;height:21px;flex:0 0 21px;color:#718096}
+.search-line .action{border:0;border-radius:999px;background:#edf4fb;color:#24577f;padding:9px 16px}
+.search-line .action:hover{background:#dcecf9}
+.search-panel .hint{text-align:center;margin:9px 0 13px}
+.search-panel .filters{justify-content:center;margin:0 auto;max-width:760px}
+.search-panel .status{flex-basis:100%;text-align:center;margin:2px 0 0}
+.quick-card{background:linear-gradient(135deg,#fff,#f0f7ff);border:1px solid #b9d8f2;box-shadow:0 2px 7px #075f9f12;color:#164b76}
+.quick-card strong{background:#0879c9;color:#fff;min-width:34px;text-align:center}
+.quick-card:hover{background:linear-gradient(135deg,#e8f5ff,#d7ebff);border-color:#1684d2;box-shadow:0 5px 14px #0871b933}
+@media(max-width:620px){
+ .search-panel{margin:0 auto 22px}
+ .search-line{padding-left:13px}
+ .search-line input{font-size:14px}
+ .search-panel .filters{justify-content:flex-start}
+ .search-panel .status{text-align:left}
+}
+
 </style>
 </head>
 <body>
 <div class="layout">
 <aside class="sidebar"><div class="brand"><h1>BOOKS LIBRARY</h1><p>Personal reading collection</p></div><div class="nav-label">Browse collections</div><div id="navigation"><button class="nav-btn active" data-category="">All books <span id="nav-total">—</span></button></div></aside>
 <main class="main"><div class="wrap" id="page-top">
-<header class="hero"><h2>Books Library</h2><p>A structured catalogue of books. Browse by collection or search across titles, authors, identifiers, languages and subjects.</p></header>
+
+<section class="search-panel"><div class="search-line"><svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg><input id="global-search" type="search" autocomplete="off" placeholder="Search books, authors, IDs, collections… (typo-tolerant)"><button class="action" id="reset">Reset</button></div><div class="hint">Advanced search · typo-tolerant matching · yellow highlights · searches all collections</div><div class="filters"><label for="language">Language</label><select id="language"><option value="">All languages</option><option>Bengali</option><option>English</option><option>Sanskrit</option></select><label for="category">Collection</label><select id="category"><option value="">All collections</option></select><span class="status" id="status">Loading catalogue…</span></div></section>
 <div class="stats" id="dashboard">
 <a class="stat stat-link" href="#catalogue"><strong id="book-total">—</strong><span>Books catalogued · View catalogue</span></a>
 <a class="stat stat-link" href="#quick-navigation"><strong id="category-total">—</strong><span>Collections · Quick navigation</span></a>
 <a class="stat stat-link" href="#catalogue"><strong id="author-total">—</strong><span>Author names identified · Browse</span></a>
 </div>
 <section class="quick-panel" id="quick-navigation"><div class="quick-head"><div><div class="eyebrow">QUICK NAVIGATION</div><h3>Explore the library</h3><p>Jump directly to a collection. Counts update from the live catalogue.</p></div><a class="back-link" href="#dashboard">Back to dashboard ↑</a></div><div id="quick-cards" class="quick-cards"><div class="loading">Preparing collections…</div></div></section>
-<section class="search-panel"><div class="search-line"><input id="global-search" type="search" autocomplete="off" placeholder="Search books, authors, IDs, collections… (typo-tolerant)"><button class="action" id="reset">Reset</button></div><div class="hint">Advanced search · typo-tolerant matching · yellow highlights · searches all collections</div><div class="filters"><label for="language">Language</label><select id="language"><option value="">All languages</option><option>Bengali</option><option>English</option><option>Sanskrit</option></select><label for="category">Collection</label><select id="category"><option value="">All collections</option></select><span class="status" id="status">Loading catalogue…</span></div></section>
+
 <div id="catalogue"><div class="loading">Loading book catalogue…</div></div>
-<div class="footer" id="page-bottom">You have reached the end of the catalogue. <a href="#page-top">Back to top ↑</a><br>Use View to open a book in a new tab, or Download to save its PDF. PDFs remain in the Books repository and are not embedded in this HTML page.</div>
+
 </div></main></div>
 <div class="page-jump" aria-label="Page navigation"><a href="#page-top" title="Back to top">↑<span>Top</span></a><a href="#page-bottom" title="Go to bottom">↓<span>Bottom</span></a></div>
 <script>
@@ -52,16 +82,67 @@ const $=s=>document.querySelector(s);
 let books=[];
 const titleCase=s=>s.replace(/[-_]/g," ").replace(/\b\w/g,c=>c.toUpperCase());
 const clean=s=>s.replace(/\.pdf$/i,"").replace(/^\d{2}-/,"").replace(/[-_]/g," ").replace(/\s+/g," ").trim();
+const bengaliTitles={
+"KOL-BN-001":"কলিকাতার কথা (আদিকাণ্ড)","KOL-BN-004":"কলিকাতা দর্পণ (দ্বিতীয় খণ্ড)","KOL-BN-007":"কলকাতার রাজকাহিনী","KOL-BN-011":"কলকাতার পথঘাট","KOL-BN-015":"সেকাল আর একাল","KOL-BN-044":"প্রাক-পলাশী বাংলা","KOL-BN-045":"সে আর এক কলকাতা","KOL-BN-047":"সুতানুটি সমাচার","KOL-BN-050":"জব চার্নক","KOL-BN-052":"তিন শতাব্দীর শোভাবাজার রাজবাড়ি","KOL-BN-058":"পুরানো কলকাতার পড়াশোনা","KOL-BN-063":"এক যে ছিল কলকাতা","KOL-BN-064":"কি করে কলকাতা হলো","KOL-BN-066":"কলিকাতার ইতিহাস","KOL-BN-104":"পূর্ব-পশ্চিম","KOL-BN-105":"চৌরঙ্গী","KOL-BN-106":"জন অরণ্য","KOL-BN-002":"কলিকাতার ইতিবৃত্ত","KOL-BN-003":"কলিকাতা: দর্পণ পর্ব ১","KOL-BN-005":"কলকাতার পুরাকথা","KOL-BN-006":"হুতোম প্যাঁচার নকশা","KOL-BN-008":"কলকাতার প্রথম","KOL-BN-009":"পুরোনো কলকাতার কথা চিত্র","KOL-BN-010":"শ্রীপান্থর কলকাতা","KOL-BN-012":"পশ্চিমবঙ্গের সংস্কৃতি","KOL-BN-013":"বাংলার সামাজিক ইতিহাসের ধারা","KOL-BN-014":"বাংলার সামাজিক ইতিহাস","KOL-BN-016":"বনেদি কলকাতার ঘরবাড়ি","KOL-BN-017":"কলকাতার কাহিনী","KOL-BN-018":"অচেনা এই কলকাতা","KOL-BN-019":"বাবু গৌরবের কলকাতা","KOL-BN-020":"কোম্পানি আমলে বিদেশি চিত্রকর","KOL-BN-021":"কালে কালে কলকাতা","KOL-BN-022":"কালের শহর কলকাতা","KOL-BN-023":"কালীঘাটের পুরাতত্ত্ব","KOL-BN-024":"কলিকাতা পরিচয়","KOL-BN-025":"কলিকাতার পুরাতন কাহিনী ও প্রথা","KOL-BN-026":"কলকাতার সৃষ্টি ও জব চার্নক","KOL-BN-027":"নতুন তথ্যের আলোকে কলকাতা","KOL-BN-028":"ইস্ট ইন্ডিয়া কোম্পানি ও ভারতের অর্থনৈতিক ইতিহাস","KOL-BN-029":"কলিকাতার পারিবারিক ইতিহাস (খণ্ড ১)","KOL-BN-030":"রাজনারায়ণের কলকাতা","KOL-BN-031":"সুরাট থেকে সুতানুটি","KOL-BN-032":"আদিম কলকাতার ভূতের বাড়ি ও অন্যান্য","KOL-BN-033":"আঠারো শতকের বাংলা ও বাঙালি","KOL-BN-034":"রাজনারায়ণ বসুর আত্মচরিত","KOL-BN-035":"সচিত্র কলিকাতার কথা","KOL-BN-036":"সেকালের সংবাদপত্রে কলকাতা","KOL-BN-037":"সেকালের সংবাদপত্রে কলকাতা","KOL-BN-038":"বটতলার ছাপা ও ছবি","KOL-BN-039":"ক্লাইভ চরিত","KOL-BN-040":"কালিকট থেকে পলাশী","KOL-BN-041":"কলকাতার বাবু বৃত্তান্ত","KOL-BN-042":"পলাশীর যুদ্ধ","KOL-BN-043":"পলাশীর পর বক্সার","KOL-BN-046":"সন তারিখে কলকাতার ইতিহাস","KOL-BN-051":"কলেজ স্ট্রিট","KOL-BN-054":"মেটিয়াবুরুজের নবাব","KOL-BN-055":"অন্য কলকাতা","KOL-BN-059":"কলকাতা শহরের ইতিবৃত্ত","KOL-BN-060":"কলকাতা শহরের ইতিবৃত্ত","KOL-BN-061":"ঠাকুরবাড়ির অন্দরমহল","KOL-BN-062":"কলকাতার ফেরিওয়ালার ডাক আর রাস্তার আওয়াজ","KOL-BN-065":"কেরি সাহেবের মুন্সী","KOL-BN-101":"সেই সময়","KOL-BN-102":"সেই সময়","KOL-BN-103":"সেই সময়",
+};
 function record(path){
  const p=path.split("/"),root=p[0],base=p[p.length-1].replace(/\.pdf$/i,"");
- let title=base,author="";
+ let title=base.replace(/^\d{2}-/,""),author="",publishYear="";
  const coded=base.match(/^([A-Z]{3}-[A-Z]{2}-\d{3})\s*-\s*/i);
  if(coded){let rest=base.slice(coded[0].length),bits=rest.split(" - ");if(bits.length>1){author=bits.pop().trim();title=bits.join(" - ").trim()}else title=rest.trim()}
+ if(root==="stories"){
+   const yearMatch=title.match(/(?:^|[\s_-])((?:18|19|20)\d{2})(?=$|[\s_.-])/);
+   if(yearMatch){publishYear=yearMatch[1];title=title.replace(yearMatch[0]," ");}
+   title=title.replace(/[-_]+/g," ").replace(/\s+/g," ").trim();
+ }
+ if(/^Bhagavad[- ]Gita[- ]Jathajath$/i.test(title))title="Bhagavad Gita Jathajath";
+
+ if(root==="classics"){
+   // Metadata verified against classics/Bengali/Khona/README.md.
+   const classicsMetadata={
+     "01-khanar-bachan-ramlal-shil":{title:"Khanar Bachan",author:"Ramlal Shil"},
+     "02-brihat-khanar-bachan-sri-suresh-chowdhury":{title:"Brihat Khanar Bachan",author:"Sri Suresh Chowdhury"},
+     "03-dak-o-khanar-bachan":{title:"Dak O Khanar Bachan",author:"ড. আলি নওয়াজ"},
+     "04-kingbodonti-khona-o-khanar-bachan-purabi-basu":{title:"Kingbodonti Khona O Khanar Bachan",author:"Purabi Basu"},
+     "05-barahamihir-o-khona":{title:"Barahamihir O Khona",author:"শ্রী শ্রী কৃষ্ণ ভট্টাচার্য্য"}
+   };
+   const classicKey=base.toLowerCase().replace(/\\.pdf$/i,"");
+   const classicMeta=classicsMetadata[classicKey];
+   if(classicMeta){title=classicMeta.title;author=classicMeta.author;}
+   else{title=clean(base);}
+ }
+ if(root==="childrens" && /sahaj[- ]path|sahaj[- ]paath/i.test(path)){
+   title=clean(base).replace(/[-_]+/g," ").replace(/\bpath\b/ig,"Paath").replace(/\s+/g," ").trim();
+ }
+
+ // Verified bibliographic attribution: The Life of Lord Clive is by Sir George Forrest.
+ if(/life[- _].*lord[- _].*clive|lord[- _].*clive.*life/i.test(path+" "+title)){
+   author="Sir George Forrest";
+ }
+
  if(!author){
    const folder=p.slice(1,-1).find(x=>/^\d{2}-/.test(x));
    if(folder)author=clean(folder);
  }
+ // Stories author attribution: use the author directory after the language folder,
+ // including unnumbered author directories such as Misc/Hemendra-Kumar-Roy.
+ if(root==="stories"&&!author){
+   const languageIndex=p.findIndex(x=>/^(Bengali|English|Hindi)$/i.test(x));
+   const authorFolder=languageIndex>=0?p[languageIndex+1]:p[2];
+   if(authorFolder)author=clean(authorFolder);
+ }
  if(!author&&root==="classics"&&p.length>3){const m=p[p.length-2].match(/^\d{2}-[^-]+-(.+)$/);if(m)author=clean(m[1])}
+ // Verified author metadata from the repository's own collection notes.
+ if(!author&&root==="childrens"&&/Sahaj-Path/i.test(path))author="Rabindranath Tagore";
+ if(!author&&root==="classics"&&/classics\/Bengali\/Khona\//i.test(path)){
+   const verifiedKhonaAuthors=[
+     [/^01-Khanar-Bachan-Ramlal-Shil$/i,"Ramlal Shil"],
+     [/^02-Brihat-Khanar-Bachan-Sri-Suresh-Chowdhury$/i,"Sri Suresh Chowdhury"],
+     [/^04-Kingbodonti-Khona-O-Khanar-Bachan-Purabi-Basu$/i,"Purabi Basu"]
+   ];
+   const match=verifiedKhonaAuthors.find(([pattern])=>pattern.test(base));
+   if(match)author=match[1];
+ }
  let category=titleCase(root),collection=category;
  if(root==="history"){
    if(p.includes("kolkata")){category="Kolkata History";const ix=p.indexOf("books");collection=p.slice(ix+1,-1).map(titleCase).join(" · ")||"Kolkata History"}
@@ -69,38 +150,81 @@ function record(path){
  }else if(root==="stories"){
    category="Stories";collection=p.slice(1,-1).filter(x=>!(/^\d{2}-/.test(x))).map(titleCase).join(" · ")||"Stories";
  }else if(root==="classics"){category="Classics";collection=p.slice(1,-1).map(titleCase).join(" · ")||"Classics"}
- else if(root==="childrens"){category="Children’s Books";collection=p.slice(1,-1).map(titleCase).join(" · ")||"Children’s Books"}
- const language=/(^|\/)Bengali(\/|$)|Sahaj-Path|classics\/Bengali|KOL-BN-/i.test(path)?"Bengali":/KOL-EN-|IND-EN-/i.test(path)?"English":/Bhagavad/i.test(base)?"Sanskrit":"English";
- return {title,author,language,category,collection,path};
+ else if(root==="childrens"){
+   category="Children’s Books";
+   collection=p.slice(1,-1).map(x=>titleCase(x.replace(/[-_]+/g," ")).replace(/\bPath\b/gi,"Paath")).join(" · ")||"Children’s Books";
+ }
+ const language=/(^|\/)Bengali(\/|$)|Sahaj-Path|classics\/Bengali|KOL-BN-|spiritual\/.*sans?kir?ti/i.test(path)?"Bengali":/KOL-EN-|IND-EN-/i.test(path)?"English":/Bhagavad/i.test(base)?"Sanskrit":"English";
+ const bookId=(base.match(/^([A-Z]{3}-[A-Z]{2}-\d{3})/i)||[])[1]?.toUpperCase()||"";
+ const specialBengaliTitles={
+   "bangla-sahaj-paath-1":"সহজ পাঠ (প্রথম ভাগ)","bangla-sahaj-paath-2":"সহজ পাঠ (দ্বিতীয় ভাগ)","bangla-sahaj-paath-3":"সহজ পাঠ (তৃতীয় ভাগ)","bangla-sahaj-paath-4":"সহজ পাঠ (চতুর্থ ভাগ)",
+   "01-Khanar-Bachan-Ramlal-Shil":"খনার বচন","02-Brihat-Khanar-Bachan-Sri-Suresh-Chowdhury":"বৃহৎ খনার বচন","03-Dak-O-Khanar-Bachan":"ডাক ও খনার বচন","04-Kingbodonti-Khona-O-Khanar-Bachan-Purabi-Basu":"কিংবদন্তি খনা ও খনার বচন","05-Barahamihir-O-Khona":"বরাহমিহির ও খনা"
+ };
+ const specialKey=base.toLowerCase().replace(/\.pdf$/i,"").replace(/[-_\s]+/g,"-");
+ const classicsBengali={
+   "01-khanar-bachan-ramlal-shil":"খনার বচন",
+   "02-brihat-khanar-bachan-sri-suresh-chowdhury":"বৃহৎ খনার বচন",
+   "03-dak-o-khanar-bachan":"ডাক ও খনার বচন",
+   "04-kingbodonti-khona-o-khanar-bachan-purabi-basu":"কিংবদন্তি খনা ও খনার বচন",
+   "05-barahamihir-o-khona":"বরাহমিহির ও খনা"
+ };
+ const titleKey=String(title).toLowerCase().replace(/\.pdf$/i,"").replace(/[-_]+/g," ").replace(/\s+/g," ").trim();
+ const kolkataBengaliTitles={
+   "college street e sottor bachhar":"কলেজ স্ট্রিটে সত্তর বছর",
+   "kolkata darpan vol 1":"কলিকাতা দর্পণ (প্রথম খণ্ড)",
+   "kolkata darpan vol 2":"কলিকাতা দর্পণ (দ্বিতীয় খণ্ড)",
+   "kalikatar paribarik itihas vol 1":"কলিকাতার পারিবারিক ইতিহাস (প্রথম খণ্ড)",
+   "kalikata sekaler o ekaler":"কলিকাতা সেকালের ও একালের",
+   "prothom alo vol 1":"প্রথম আলো (প্রথম খণ্ড)",
+   "prothom alo vol 2":"প্রথম আলো (দ্বিতীয় খণ্ড)",
+   "sekaler sangbadpatre kolkata vol 1":"সেকালের সংবাদপত্রে কলকাতা (প্রথম খণ্ড)",
+   "sekaler sangbadpatre kolkata vol 2":"সেকালের সংবাদপত্রে কলকাতা (দ্বিতীয় খণ্ড)",
+   "kolkatar shohorer itibritta vol 1":"কলকাতা শহরের ইতিবৃত্ত (প্রথম খণ্ড)",
+   "kolkatar shohorer itibritta vol 2":"কলকাতা শহরের ইতিবৃত্ত (দ্বিতীয় খণ্ড)"
+ };
+ const storiesBengaliTitles={
+   "chander pahar":"চাঁদের পাহাড়","kedar raja":"কেদার রাজা","maraner danka baje":"মরণের ডঙ্কা বাজে","mismider koboch":"মিসমিদের কবচ",
+   "tarini khuror kirti kalap":"তারিণীখুড়োর কীর্তিকলাপ","goyenda omnibus":"গোয়েন্দা অমনিবাস",
+   "feludar goyendagiri":"ফেলুদার গোয়েন্দাগিরি","badshahi angti":"বাদশাহী আংটি","kailash chowdhury pathar":"কৈলাস চৌধুরীর পাথর","sheyal debota rohosyo":"শেয়াল দেবতা রহস্য","gangtok e gondogol":"গ্যাংটকে গণ্ডগোল","sonar kella":"সোনার কেল্লা","baksho rahasya":"বাক্স রহস্য","samaddarer chabi":"সমাদ্দারের চাবি","kailashey kelenkari":"কৈলাসে কেলেঙ্কারি","royal bengal rahasya":"রয়েল বেঙ্গল রহস্য","joy baba felunath":"জয় বাবা ফেলুনাথ","ghurghutiyar ghatona":"ঘুরঘুটিয়ার ঘটনা","bombayer bombate":"বোম্বাইয়ের বোম্বেটে","gosaipur sargaram":"গোসাঁইপুর সরগরম","gorosthane shabdhan":"গোরস্থানে সাবধান","chinnomastar obhishap":"ছিন্নমস্তার অভিশাপ","hatyapuri":"হত্যাপুরী","golokdham rahasya":"গোলকধাম রহস্য","joto kando katmandute":"যত কাণ্ড কাঠমান্ডুতে","nepolioner chithi":"নেপোলিয়নের চিঠি","tintorettor jishu":"টিনটোরেটোর যিশু","ambar sen antordhan rahasyo":"অম্বর সেন অন্তর্ধান রহস্য","jahangir er sorno mudra":"জাহাঙ্গীরের স্বর্ণমুদ্রা","ebar kando kedarnathe":"এবার কাণ্ড কেদারনাথে","bosepukure khunkharapi":"বোসপুকুরে খুনখারাপি","darjeling jamjamat":"দার্জিলিং জমজমাট","apsara theaterer mamla":"অপ্সরা থিয়েটারের মামলা","bhusharga bhayankar":"ভূস্বর্গ ভয়ঙ্কর","shakuntalar konthohaar":"শকুন্তলার কণ্ঠহার","london e feluda":"লন্ডনে ফেলুদা","golapi mukta rahasya":"গোলাপী মুক্তা রহস্য","dr munshir diary":"ডঃ মুনশির ডায়েরি","nayan rahasya":"নয়ন রহস্য","robertson er ruby":"রবার্টসনের রুবি","indrajal rahasya":"ইন্দ্রজাল রহস্য",
+   "professor shonku samagra":"প্রফেসর শঙ্কু সমগ্র","adarsha hindu hotel":"আদর্শ হিন্দু হোটেল","aparajito":"অপরাজিত","aranyak":"আরণ্যক","ashani sanket":"অশনি সংকেত","debjan":"দেবযান","ichhamati":"ইছামতী","pather panchali":"পথের পাঁচালী",
+   "bishoy cholochitra":"বিষয় চলচ্চিত্র","ekei bale shooting":"একেই বলে শুটিং","jokhon chhoto chhilam":"যখন ছোট ছিলাম","our films their films":"আওয়ার ফিল্মস দেয়ার ফিল্মস","toray badha ghorar dim":"তোরায় বাঁধা ঘোড়ার ডিম",
+   "hemendra rachanabali part 01":"হেমেন্দ্র রচনাবলী (প্রথম খণ্ড)","hemendra rachanabali part 02":"হেমেন্দ্র রচনাবলী (দ্বিতীয় খণ্ড)","hemendra rachanabali part 03":"হেমেন্দ্র রচনাবলী (তৃতীয় খণ্ড)","hemendra rachanabali part 04":"হেমেন্দ্র রচনাবলী (চতুর্থ খণ্ড)","hemendra rachanabali part 05":"হেমেন্দ্র রচনাবলী (পঞ্চম খণ্ড)","hemendra rachanabali part 06":"হেমেন্দ্র রচনাবলী (ষষ্ঠ খণ্ড)","hemendra rachanabali part 07":"হেমেন্দ্র রচনাবলী (সপ্তম খণ্ড)","hemendra rachanabali part 08":"হেমেন্দ্র রচনাবলী (অষ্টম খণ্ড)","hemendra rachanabali part 09":"হেমেন্দ্র রচনাবলী (নবম খণ্ড)","hemendra rachanabali part 10":"হেমেন্দ্র রচনাবলী (দশম খণ্ড)","hemendra rachanabali part 11":"হেমেন্দ্র রচনাবলী (একাদশ খণ্ড)","hemendra rachanabali part 12":"হেমেন্দ্র রচনাবলী (দ্বাদশ খণ্ড)","hemendra rachanabali part 13":"হেমেন্দ্র রচনাবলী (ত্রয়োদশ খণ্ড)","hemendra rachanabali part 14":"হেমেন্দ্র রচনাবলী (চতুর্দশ খণ্ড)","hemendra rachanabali part 15":"হেমেন্দ্র রচনাবলী (পঞ্চদশ খণ্ড)","hemendra rachanabali part 16":"হেমেন্দ্র রচনাবলী (ষোড়শ খণ্ড)","hemendra rachanabali part 17":"হেমেন্দ্র রচনাবলী (সপ্তদশ খণ্ড)","hemendra rachanabali part 18":"হেমেন্দ্র রচনাবলী (অষ্টাদশ খণ্ড)","hemendra rachanabali part 19":"হেমেন্দ্র রচনাবলী (ঊনবিংশ খণ্ড)","hemendra rachanabali part 20":"হেমেন্দ্র রচনাবলী (বিংশ খণ্ড)","hemendra rachanabali part 21":"হেমেন্দ্র রচনাবলী (একবিংশ খণ্ড)","hemendra rachanabali part 22":"হেমেন্দ্র রচনাবলী (দ্বাবিংশ খণ্ড)","hemendra rachanabali part 23":"হেমেন্দ্র রচনাবলী (ত্রয়োবিংশ খণ্ড)","hemendra rachanabali part 24":"হেমেন্দ্র রচনাবলী (চতুর্বিংশ খণ্ড)","hemendra rachanabali part 25":"হেমেন্দ্র রচনাবলী (পঞ্চবিংশ খণ্ড)","hemendra rachanabali part 26":"হেমেন্দ্র রচনাবলী (ষড়্বিংশ খণ্ড)","hemendra rachanabali part 27":"হেমেন্দ্র রচনাবলী (সপ্তবিংশ খণ্ড)",
+   "jatrabodol":"যাত্রাবদল","meghomallar":"মেঘমল্লার","mouriful":"মৌরিফুল","nobagoto":"নবাগত","talnabomi":"তালনবমী","bone pahare":"বনে পাহাড়ে","abhijatrik":"অভিযাত্রিক","he aranya katha kao":"হে অরণ্য কথা কও",
+   "tarini khuro samagra":"তারিণীখুড়ো সমগ্র","feluda samagra":"ফেলুদা সমগ্র"
+ };
+ const storyKey=String(title).toLowerCase().replace(/\.pdf$/i,"").replace(/[-_]+/g," ").replace(/\s+/g," ").trim();
+ const bengaliTitle=language==="Bengali"?(kolkataBengaliTitles[titleKey]||classicsBengali[base.toLowerCase()]||bengaliTitles[bookId]||specialBengaliTitles[specialKey]||storiesBengaliTitles[storyKey]||(/sans?kir?ti/i.test(base)?"সংস্কৃতি":"")):"";
+ return {title,author,bengaliTitle,language,category,collection,path,publishYear};
 }
 function norm(s){return String(s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g," ").trim()}
 function distance(a,b){let prev=Array.from({length:b.length+1},(_,i)=>i);for(let i=1;i<=a.length;i++){let cur=[i];for(let j=1;j<=b.length;j++)cur[j]=Math.min(cur[j-1]+1,prev[j]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1));prev=cur}return prev[b.length]}
-function score(text,q){const query=norm(q),target=norm(text);if(!query)return 1;if(target.includes(query))return 1;const terms=query.split(" "),words=target.split(" ");let total=0;for(const term of terms){let best=0;for(const word of words){if(word.includes(term)||term.includes(word)){best=Math.max(best,Math.min(term.length,word.length)/Math.max(term.length,word.length));continue}const d=distance(term,word),limit=term.length<5?1:term.length<9?2:3;if(d<=limit)best=Math.max(best,1-d/Math.max(term.length,word.length))}if(!best)return 0;total+=best}return total/Math.max(1,terms.length)}
+function score(text,q){const rawQ=String(q||"").trim().toLocaleLowerCase();if(!rawQ)return 1;if(/[\u0980-\u09FF]/.test(rawQ)&&String(text||"").toLocaleLowerCase().includes(rawQ))return 1;const query=norm(q),target=norm(text);if(!query)return 0;if(target.includes(query))return 1;const terms=query.split(" "),words=target.split(" ");let total=0;for(const term of terms){let best=0;for(const word of words){if(word.includes(term)||term.includes(word)){best=Math.max(best,Math.min(term.length,word.length)/Math.max(term.length,word.length));continue}const d=distance(term,word),limit=term.length<5?1:term.length<9?2:3;if(d<=limit)best=Math.max(best,1-d/Math.max(term.length,word.length))}if(!best)return 0;total+=best}return total/Math.max(1,terms.length)}
 function pdfUrl(path){return `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/`+path.split("/").map(encodeURIComponent).join("/")}
 function viewUrl(path){return `https://${OWNER}.github.io/${REPO}/`+path.split("/").map(encodeURIComponent).join("/")}
 function actionIcons(path,title){return `<a class="icon-action" href="${viewUrl(path)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${safe(title)} PDF in a new tab" title="View PDF in a new tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></a><button class="icon-action download download-pdf" type="button" data-path="${safe(path)}" data-title="${safe(title)}" aria-label="Download ${safe(title)}" title="Download PDF file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5"/><path d="M5 17v3h14v-3"/></svg></button>`}
 async function downloadPdf(path,title){const button=document.querySelector(`.download-pdf[data-path="${CSS.escape(path)}"]`);if(button){button.disabled=true;button.title="Preparing download…"}try{const response=await fetch(pdfUrl(path));if(!response.ok)throw new Error(`HTTP ${response.status}`);const blob=await response.blob();const objectUrl=URL.createObjectURL(blob);const a=document.createElement("a");a.href=objectUrl;a.download=(title||path.split("/").pop()).replace(/\.pdf$/i,"")+".pdf";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(objectUrl),60000)}catch(error){alert("Download failed. Please try again or use the View button. "+error.message)}finally{if(button){button.disabled=false;button.title="Download PDF file"}}}
 document.addEventListener("click",event=>{const button=event.target.closest(".download-pdf");if(button)downloadPdf(button.dataset.path,button.dataset.title)})
 function safe(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-function markText(raw,q){if(!q)return safe(raw);let out=safe(raw);for(const term of norm(q).split(" ").filter(x=>x.length>1)){const escaped=term.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");out=out.replace(new RegExp("("+escaped+")","ig"),"<mark>$1</mark>")}return out}
+function markText(raw,q){if(!q)return safe(raw);let out=safe(raw);if(/[\u0980-\u09FF]/.test(q)){const e=String(q).trim().replace(/[.*+?^${}()|[\]\\]/g,"\\$&");return e?out.replace(new RegExp("("+e+")","ig"),"<mark>$1</mark>"):out}for(const term of norm(q).split(" ").filter(x=>x.length>1)){const escaped=term.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");out=out.replace(new RegExp("("+escaped+")","ig"),"<mark>$1</mark>")}return out}
 function render(){
  const cats=[...new Set(books.map(b=>b.category))].sort();
- books.sort((a,b)=>(a.category+" "+a.title).localeCompare(b.category+" "+b.title,undefined,{sensitivity:"base"}));
- books.forEach((b,i)=>b.index=i+1);
+ books.sort((a,b)=>(a.category+" "+a.collection+" "+a.title).localeCompare(b.category+" "+b.collection+" "+b.title,undefined,{numeric:true,sensitivity:"base"}));
+
  $("#book-total").textContent=books.length;$("#nav-total").textContent=books.length;$("#category-total").textContent=cats.length;$("#author-total").textContent=books.filter(b=>b.author).length;
  $("#category").innerHTML='<option value="">All collections</option>'+cats.map(c=>`<option>${safe(c)}</option>`).join("");
  $("#navigation").innerHTML=`<button class="nav-btn active" data-category="">All books <span>${books.length}</span></button>`+cats.map(c=>`<button class="nav-btn" data-category="${safe(c)}">${safe(c)} <span>${books.filter(b=>b.category===c).length}</span></button>`).join("");
  $("#quick-cards").innerHTML=cats.map(c=>{const n=books.filter(b=>b.category===c).length,slug=c.toLowerCase().replace(/[^a-z0-9]+/g,"-");return `<a class="quick-card" href="#collection-${safe(slug)}"><span>${safe(c)}</span><strong>${n}</strong></a>`}).join("");
- $("#catalogue").innerHTML=cats.map(c=>{const arr=books.filter(b=>b.category===c);const slug=c.toLowerCase().replace(/[^a-z0-9]+/g,"-");return `<section class="card category-card" id="collection-${safe(slug)}" data-category="${safe(c)}"><div class="section-head"><div><div class="eyebrow">COLLECTION</div><h3>${safe(c)}</h3></div><span class="count">${arr.length} books</span></div><div class="table-tools"><input class="local-search" type="search" placeholder="Find within ${safe(c)}…"><span class="count local-count">${arr.length} shown</span><button class="action clear-local">Clear</button></div><div class="table-wrap"><table class="table"><thead><tr><th data-key="index">#</th><th data-key="title">Book title</th><th data-key="author">Author</th><th data-key="language">Language</th><th data-key="collection">Collection</th><th>PDF actions</th></tr></thead><tbody>${arr.map(b=>`<tr data-text="${safe([b.title,b.author,b.language,b.category,b.collection].join(" "))}"><td class="row-index">${String(b.index).padStart(3,"0")}</td><td><span class="book-title">${safe(b.title)}</span></td><td>${safe(b.author||"—")}</td><td>${safe(b.language)}</td><td>${safe(b.collection)}</td><td class="book-actions">${actionIcons(b.path,b.title)}</td></tr>`).join("")}</tbody></table></div></section>`}).join("");
+ $("#catalogue").innerHTML=cats.map(c=>{const arr=books.filter(b=>b.category===c);const slug=c.toLowerCase().replace(/[^a-z0-9]+/g,"-");const isStories=c==="Stories",hasBn=arr.some(b=>b.language==="Bengali"),offset=isStories?1:0;const colBn=2+offset,colAuthor=(hasBn?3:2)+offset,colLang=(hasBn?4:3)+offset,colCollection=(hasBn?5:4)+offset,colActions=(hasBn?6:5)+offset;return `<section class="card category-card" id="collection-${safe(slug)}" data-category="${safe(c)}"><div class="section-head"><div><div class="eyebrow">COLLECTION</div><h3>${safe(c)}</h3></div><span class="count">${arr.length} books</span></div><div class="table-tools"><input class="local-search" type="search" placeholder="Find within ${safe(c)}…"><span class="count local-count">${arr.length} shown</span><button class="action clear-local">Clear</button><details class="column-menu"><summary>Columns ▾</summary><div class="column-options"></div></details></div><div class="table-wrap"><table class="table"><thead><tr><th data-key="index" data-col="0">#</th>${isStories?'<th data-key="publishYear" data-col="1">Year (publish)</th>':''}<th data-key="title" data-col="${1+offset}">Book title</th>${hasBn?`<th data-key="bengaliTitle" data-col="${colBn}">বাংলা নাম</th>`:''}<th data-key="author" data-col="${colAuthor}">Author</th><th data-key="language" data-col="${colLang}">Language</th><th data-key="collection" data-col="${colCollection}">Collection</th><th data-col="${colActions}">PDF actions</th></tr></thead><tbody>${arr.map((b,rowIndex)=>`<tr data-language="${safe(b.language)}" data-text="${safe([b.title,b.publishYear,b.bengaliTitle,b.author,b.language,b.category,b.collection].join(" "))}"><td class="row-index" data-col="0">${String(rowIndex+1).padStart(3,"0")}</td>${isStories?`<td data-col="1">${safe(b.publishYear||"—")}</td>`:''}<td data-col="${1+offset}"><span class="book-title">${safe(b.title)}</span></td>${hasBn?`<td class="bn-text" lang="bn" data-col="${colBn}">${safe(b.bengaliTitle||"—")}</td>`:''}<td data-col="${colAuthor}">${safe(b.author||"—")}</td><td data-col="${colLang}">${safe(b.language)}</td><td data-col="${colCollection}">${safe(b.collection)}</td><td class="book-actions" data-col="${colActions}">${actionIcons(b.path,b.title)}</td></tr>`).join("")}</tbody></table></div></section>`}).join("");
  document.querySelectorAll(".local-search").forEach(inp=>inp.addEventListener("input",()=>localFilter(inp)));
  document.querySelectorAll(".clear-local").forEach(btn=>btn.addEventListener("click",()=>{const i=btn.parentElement.querySelector("input");i.value="";localFilter(i)}));
+ document.querySelectorAll(".column-menu").forEach(menu=>{const table=menu.closest(".category-card").querySelector("table"),options=menu.querySelector(".column-options");[...table.tHead.rows[0].cells].forEach((th,index)=>{const label=th.textContent.trim()||`Column ${index+1}`,id=`col-${Math.random().toString(36).slice(2)}`;const item=document.createElement("label"),check=document.createElement("input");check.type="checkbox";check.checked=true;check.dataset.col=String(index);check.id=id;item.htmlFor=id;item.append(check,document.createTextNode(label));options.append(item);check.addEventListener("change",()=>{table.querySelectorAll(`[data-col="${index}"]`).forEach(cell=>cell.hidden=!check.checked)})});menu.addEventListener("toggle",()=>{if(menu.open)document.querySelectorAll(".column-menu").forEach(other=>{if(other!==menu)other.open=false})})});
  document.querySelectorAll("th[data-key]").forEach(th=>th.addEventListener("click",()=>sortTable(th)));
  document.querySelectorAll(".nav-btn").forEach(btn=>btn.addEventListener("click",()=>{document.querySelectorAll(".nav-btn").forEach(x=>x.classList.toggle("active",x===btn));$("#category").value=btn.dataset.category;apply();if(btn.dataset.category)document.querySelector(`.category-card[data-category="${CSS.escape(btn.dataset.category)}"]`)?.scrollIntoView({behavior:"smooth"});else window.scrollTo({top:0,behavior:"smooth"})}));
 }
 function highlightRow(row,q){[...row.cells].forEach(td=>{if(!td.classList.contains("book-actions"))td.innerHTML=markText(td.textContent,q)})}
 function localFilter(inp){const card=inp.closest(".category-card"),q=inp.value;let n=0;card.querySelectorAll("tbody tr").forEach(row=>{const ok=!q||score(row.dataset.text,q)>=.48;row.hidden=!ok;if(ok)n++;highlightRow(row,q)});card.querySelector(".local-count").textContent=n+" shown"}
 function sortTable(th){const table=th.closest("table"),idx=[...th.parentElement.children].indexOf(th),body=table.tBodies[0],asc=!th.classList.contains("asc");table.querySelectorAll("th").forEach(h=>h.classList.remove("asc","desc"));th.classList.add(asc?"asc":"desc");[...body.rows].sort((a,b)=>a.cells[idx].textContent.localeCompare(b.cells[idx].textContent,undefined,{numeric:true,sensitivity:"base"})*(asc?1:-1)).forEach(r=>body.appendChild(r))}
-function apply(){const q=$("#global-search").value,lang=$("#language").value,cat=$("#category").value;let n=0;document.querySelectorAll(".category-card").forEach(card=>{let visible=0;card.querySelectorAll("tbody tr").forEach(row=>{const cells=[...row.cells],ok=(!lang||cells[3].textContent===lang)&&(!cat||card.dataset.category===cat)&&(!q||score(row.dataset.text,q)>=.48);row.hidden=!ok;if(ok){visible++;n++}highlightRow(row,q)});card.hidden=visible===0;card.querySelector(".local-count").textContent=visible+" shown"});$("#status").textContent=`Showing ${n} of ${books.length} books${q?" · fuzzy search active":""}`}
+function apply(){const q=$("#global-search").value,lang=$("#language").value,cat=$("#category").value;let n=0;document.querySelectorAll(".category-card").forEach(card=>{let visible=0;card.querySelectorAll("tbody tr").forEach(row=>{const ok=(!lang||row.dataset.language===lang)&&(!cat||card.dataset.category===cat)&&(!q||score(row.dataset.text,q)>=.48);row.hidden=!ok;if(ok){visible++;n++}highlightRow(row,q)});card.hidden=visible===0;card.querySelector(".local-count").textContent=visible+" shown"});$("#status").textContent=`Showing ${n} of ${books.length} books${q?" · fuzzy search active":""}`}
 async function init(){try{const url=`https://api.github.com/repos/${OWNER}/${REPO}/git/trees/${BRANCH}?recursive=1`;const res=await fetch(url,{headers:{Accept:"application/vnd.github+json"}});if(!res.ok)throw new Error("The public catalogue source could not be reached (HTTP "+res.status+").");const data=await res.json();if(data.truncated)throw new Error("The GitHub repository tree is truncated; not all PDF files can be indexed in one request.");books=(data.tree||[]).filter(x=>x.type==="blob"&&/\.pdf$/i.test(x.path)).map(x=>record(x.path));if(!books.length)throw new Error("No book entries were found.");render();$("#status").textContent=`Showing all ${books.length} books`}catch(e){$("#catalogue").innerHTML=`<div class="error"><strong>Catalogue could not load.</strong><br>${safe(e.message)}<br><br>Check your internet connection and reload this page.</div>`;$("#status").textContent="Source unavailable"}}
 $("#global-search").addEventListener("input",apply);$("#language").addEventListener("change",apply);$("#category").addEventListener("change",()=>{document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("active",b.dataset.category===$("#category").value));apply()});$("#reset").addEventListener("click",()=>{$("#global-search").value="";$("#language").value="";$("#category").value="";document.querySelectorAll(".local-search").forEach(i=>i.value="");apply()});
 init();
