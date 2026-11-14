@@ -1,0 +1,103 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A searchable catalogue of books.">
+<title>Books Library — Searchable Catalogue</title>
+<style>
+:root{--bg:#f6f8fb;--panel:#fff;--ink:#172033;--muted:#617087;--line:#dfe5ee;--accent:#0071c5;--nav:#0b1929;--yellow:#fff176}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+.layout{display:flex;min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:260px;background:var(--nav);color:#e8eef7;overflow:auto;z-index:5}.brand{padding:21px 18px;border-bottom:1px solid #1a2d47}.brand h1{font-size:17px;margin:0;color:#fff}.brand p{font-size:11px;color:#a8b8cc;margin:5px 0 0}.nav-label{padding:17px 16px 7px;color:#7d8fa3;font-size:10px;text-transform:uppercase;letter-spacing:.09em;font-weight:700}.nav-btn{display:flex;justify-content:space-between;width:100%;padding:9px 16px;border:0;background:none;color:#c1ccda;text-align:left;cursor:pointer;font-size:13px}.nav-btn:hover,.nav-btn.active{background:linear-gradient(90deg,#0071c5,#005bb3);color:#fff}.nav-btn span{font-size:10px;color:#a7bdd3}.main{margin-left:260px;flex:1;min-width:0}.wrap{max-width:1550px;margin:auto;padding:34px 38px}.hero{background:linear-gradient(135deg,#10223d,#1e4c91);color:white;padding:32px;border-radius:9px;margin-bottom:20px}.hero h2{font-size:30px;margin:0 0 8px}.hero p{margin:0;color:#dce8fb;font-size:13px;max-width:950px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 23px}.stat,.card,.search-panel{background:#fff;border:1px solid var(--line);border-radius:8px}.stat{padding:14px 17px}.stat strong{display:block;font-size:22px;color:#174c7b}.stat span{font-size:11px;color:var(--muted)}.search-panel{padding:18px;margin:20px 0 24px;box-shadow:0 2px 8px #00000008}.search-line{display:flex;gap:10px}.search-line input{flex:1;min-width:0;padding:13px 15px;border:1px solid #bdcad9;border-radius:7px;font:inherit;font-size:15px}.search-line input:focus,.local-search:focus{outline:2px solid #0071c52b;border-color:var(--accent)}button,select{font:inherit}.action{border:1px solid #d3deea;border-radius:6px;background:white;color:#315b80;padding:8px 12px;cursor:pointer}.hint{font-size:11px;color:var(--muted);margin:9px 2px}.filters{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:12px;font-size:12px}.filters select{padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:#fff}.status{margin-left:auto;color:#53677d;font-size:11px}.card{padding:20px;margin:20px 0;box-shadow:0 1px 4px #00000008}.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.eyebrow{font-size:10px;color:#0871b9;font-weight:800;letter-spacing:.1em}.card h3{font-size:19px;margin:2px 0 4px}.count{font-size:11px;color:var(--muted)}.table-tools{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:13px 0 8px}.local-search{flex:1 1 230px;max-width:380px;min-width:160px;padding:9px 11px;border:1px solid #cfdbea;border-radius:7px;font:inherit;font-size:12px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:7px}.table{width:100%;min-width:760px;border-collapse:collapse;font-size:12px}.table th{background:#f4f7fb;border:1px solid var(--line);padding:10px;text-align:left;white-space:nowrap}.table td{border:1px solid var(--line);padding:9px 10px;vertical-align:top}.table tbody tr:nth-child(even){background:#fafbfc}.table tbody tr:hover{background:#f0f5ff}.table th[data-key]{cursor:pointer;user-select:none}.table th[data-key]:after{content:" ↕";color:#8b9bad;font-size:10px}.table th.asc:after{content:" ↑";color:var(--accent)}.table th.desc:after{content:" ↓";color:var(--accent)}tr[hidden],section[hidden]{display:none!important}mark{background:var(--yellow);color:#2b2600;border-radius:2px;padding:0 1px}.loading,.error{background:white;border:1px solid var(--line);border-radius:8px;padding:22px;color:var(--muted);margin:18px 0}.error{border-left:4px solid #d83b01;color:#74351c}.footer{text-align:center;font-size:11px;color:var(--muted);padding:22px}
+@media(max-width:850px){.sidebar{width:215px}.main{margin-left:215px}.wrap{padding:24px 20px}}@media(max-width:620px){.layout{display:block}.sidebar{position:relative;width:100%;max-height:220px}.main{margin:0}.wrap{padding:15px}.hero{padding:23px}.hero h2{font-size:24px}.stats{grid-template-columns:1fr 1fr}.search-line{display:block}.search-line input{width:100%;margin-bottom:8px}.card{padding:14px}}
+
+.stat-link{display:block;text-decoration:none;color:inherit;transition:transform .16s ease,box-shadow .16s ease;cursor:pointer}
+.stat-link:hover{transform:translateY(-2px);box-shadow:0 6px 18px #0b29451a;border-color:#b6d2e9}
+.quick-panel{background:#fff;border:1px solid var(--line);border-radius:8px;padding:20px;margin:20px 0 24px;box-shadow:0 1px 4px #00000008}
+.quick-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}
+.quick-head h3{font-size:19px;margin:2px 0 3px}.quick-head p{font-size:12px;color:var(--muted);margin:0}
+.back-link{font-size:11px;text-decoration:none;color:#0871b9;white-space:nowrap}
+.quick-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.quick-card{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 13px;border:1px solid var(--line);border-radius:7px;background:#fbfcfe;color:#1b3550;text-decoration:none;font-size:12px;transition:all .15s ease}
+.quick-card:hover{background:#edf6ff;border-color:#9fc8e8;transform:translateY(-1px)}
+.quick-card strong{font-size:11px;color:#0871b9;background:#e7f3fc;padding:3px 7px;border-radius:12px}
+.row-index{width:55px;text-align:center;color:#73849a;font-variant-numeric:tabular-nums}
+.page-jump{position:fixed;right:18px;bottom:20px;z-index:20;display:flex;flex-direction:column;gap:7px}
+.page-jump a{width:43px;height:43px;border-radius:8px;background:#12385f;color:#fff;text-decoration:none;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 3px 12px #071b3233;font-size:17px;line-height:1}
+.page-jump a span{font-size:9px;margin-top:2px}.page-jump a:hover{background:#0071c5}
+.category-card{scroll-margin-top:16px}
+@media(max-width:620px){.quick-panel{padding:14px}.quick-head{display:block}.back-link{display:inline-block;margin-top:8px}.quick-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.page-jump{right:10px;bottom:12px}.page-jump a{width:38px;height:38px}}
+
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar"><div class="brand"><h1>BOOKS LIBRARY</h1><p>Personal reading collection</p></div><div class="nav-label">Browse collections</div><div id="navigation"><button class="nav-btn active" data-category="">All books <span id="nav-total">—</span></button></div></aside>
+<main class="main"><div class="wrap" id="page-top">
+<header class="hero"><h2>Books Library</h2><p>A structured catalogue of books. Browse by collection or search across titles, authors, identifiers, languages and subjects.</p></header>
+<div class="stats" id="dashboard">
+<a class="stat stat-link" href="#catalogue"><strong id="book-total">—</strong><span>Books catalogued · View catalogue</span></a>
+<a class="stat stat-link" href="#quick-navigation"><strong id="category-total">—</strong><span>Collections · Quick navigation</span></a>
+<a class="stat stat-link" href="#catalogue"><strong id="author-total">—</strong><span>Author names identified · Browse</span></a>
+</div>
+<section class="quick-panel" id="quick-navigation"><div class="quick-head"><div><div class="eyebrow">QUICK NAVIGATION</div><h3>Explore the library</h3><p>Jump directly to a collection. Counts update from the live catalogue.</p></div><a class="back-link" href="#dashboard">Back to dashboard ↑</a></div><div id="quick-cards" class="quick-cards"><div class="loading">Preparing collections…</div></div></section>
+<section class="search-panel"><div class="search-line"><input id="global-search" type="search" autocomplete="off" placeholder="Search books, authors, IDs, collections… (typo-tolerant)"><button class="action" id="reset">Reset</button></div><div class="hint">Advanced search · typo-tolerant matching · yellow highlights · searches all collections</div><div class="filters"><label for="language">Language</label><select id="language"><option value="">All languages</option><option>Bengali</option><option>English</option><option>Sanskrit</option></select><label for="category">Collection</label><select id="category"><option value="">All collections</option></select><span class="status" id="status">Loading catalogue…</span></div></section>
+<div id="catalogue"><div class="loading">Loading book catalogue…</div></div>
+<div class="footer" id="page-bottom">You have reached the end of the catalogue. <a href="#page-top">Back to top ↑</a><br>Catalogue metadata only. Book documents are not embedded or downloaded.</div>
+</div></main></div>
+<div class="page-jump" aria-label="Page navigation"><a href="#page-top" title="Back to top">↑<span>Top</span></a><a href="#page-bottom" title="Go to bottom">↓<span>Bottom</span></a></div>
+<script>
+const OWNER="abhijitxroy",REPO="books",BRANCH="main";
+const $=s=>document.querySelector(s);
+let books=[];
+const titleCase=s=>s.replace(/[-_]/g," ").replace(/\b\w/g,c=>c.toUpperCase());
+const clean=s=>s.replace(/\.pdf$/i,"").replace(/^\d{2}-/,"").replace(/[-_]/g," ").replace(/\s+/g," ").trim();
+function record(path){
+ const p=path.split("/"),root=p[0],base=p[p.length-1].replace(/\.pdf$/i,"");
+ let title=base,author="";
+ const coded=base.match(/^([A-Z]{3}-[A-Z]{2}-\d{3})\s*-\s*/i);
+ if(coded){let rest=base.slice(coded[0].length),bits=rest.split(" - ");if(bits.length>1){author=bits.pop().trim();title=bits.join(" - ").trim()}else title=rest.trim()}
+ if(!author){
+   const folder=p.slice(1,-1).find(x=>/^\d{2}-/.test(x));
+   if(folder)author=clean(folder);
+ }
+ if(!author&&root==="classics"&&p.length>3){const m=p[p.length-2].match(/^\d{2}-[^-]+-(.+)$/);if(m)author=clean(m[1])}
+ let category=titleCase(root),collection=category;
+ if(root==="history"){
+   if(p.includes("kolkata")){category="Kolkata History";const ix=p.indexOf("books");collection=p.slice(ix+1,-1).map(titleCase).join(" · ")||"Kolkata History"}
+   else {category="Indian History";collection=p.slice(1,-1).map(titleCase).join(" · ")||"Indian History"}
+ }else if(root==="stories"){
+   category="Stories";collection=p.slice(1,-1).filter(x=>!(/^\d{2}-/.test(x))).map(titleCase).join(" · ")||"Stories";
+ }else if(root==="classics"){category="Classics";collection=p.slice(1,-1).map(titleCase).join(" · ")||"Classics"}
+ else if(root==="childrens"){category="Children’s Books";collection=p.slice(1,-1).map(titleCase).join(" · ")||"Children’s Books"}
+ const language=/(^|\/)Bengali(\/|$)|Sahaj-Path|classics\/Bengali|KOL-BN-/i.test(path)?"Bengali":/KOL-EN-|IND-EN-/i.test(path)?"English":/Bhagavad/i.test(base)?"Sanskrit":"English";
+ return {title,author,language,category,collection};
+}
+function norm(s){return String(s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g," ").trim()}
+function distance(a,b){let prev=Array.from({length:b.length+1},(_,i)=>i);for(let i=1;i<=a.length;i++){let cur=[i];for(let j=1;j<=b.length;j++)cur[j]=Math.min(cur[j-1]+1,prev[j]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1));prev=cur}return prev[b.length]}
+function score(text,q){const query=norm(q),target=norm(text);if(!query)return 1;if(target.includes(query))return 1;const terms=query.split(" "),words=target.split(" ");let total=0;for(const term of terms){let best=0;for(const word of words){if(word.includes(term)||term.includes(word)){best=Math.max(best,Math.min(term.length,word.length)/Math.max(term.length,word.length));continue}const d=distance(term,word),limit=term.length<5?1:term.length<9?2:3;if(d<=limit)best=Math.max(best,1-d/Math.max(term.length,word.length))}if(!best)return 0;total+=best}return total/Math.max(1,terms.length)}
+function safe(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function markText(raw,q){if(!q)return safe(raw);let out=safe(raw);for(const term of norm(q).split(" ").filter(x=>x.length>1)){const escaped=term.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");out=out.replace(new RegExp("("+escaped+")","ig"),"<mark>$1</mark>")}return out}
+function render(){
+ const cats=[...new Set(books.map(b=>b.category))].sort();
+ books.sort((a,b)=>(a.category+" "+a.title).localeCompare(b.category+" "+b.title,undefined,{sensitivity:"base"}));
+ books.forEach((b,i)=>b.index=i+1);
+ $("#book-total").textContent=books.length;$("#nav-total").textContent=books.length;$("#category-total").textContent=cats.length;$("#author-total").textContent=books.filter(b=>b.author).length;
+ $("#category").innerHTML='<option value="">All collections</option>'+cats.map(c=>`<option>${safe(c)}</option>`).join("");
+ $("#navigation").innerHTML=`<button class="nav-btn active" data-category="">All books <span>${books.length}</span></button>`+cats.map(c=>`<button class="nav-btn" data-category="${safe(c)}">${safe(c)} <span>${books.filter(b=>b.category===c).length}</span></button>`).join("");
+ $("#quick-cards").innerHTML=cats.map(c=>{const n=books.filter(b=>b.category===c).length,slug=c.toLowerCase().replace(/[^a-z0-9]+/g,"-");return `<a class="quick-card" href="#collection-${safe(slug)}"><span>${safe(c)}</span><strong>${n}</strong></a>`}).join("");
+ $("#catalogue").innerHTML=cats.map(c=>{const arr=books.filter(b=>b.category===c);const slug=c.toLowerCase().replace(/[^a-z0-9]+/g,"-");return `<section class="card category-card" id="collection-${safe(slug)}" data-category="${safe(c)}"><div class="section-head"><div><div class="eyebrow">COLLECTION</div><h3>${safe(c)}</h3></div><span class="count">${arr.length} books</span></div><div class="table-tools"><input class="local-search" type="search" placeholder="Find within ${safe(c)}…"><span class="count local-count">${arr.length} shown</span><button class="action clear-local">Clear</button></div><div class="table-wrap"><table class="table"><thead><tr><th data-key="index">#</th><th data-key="title">Book title</th><th data-key="author">Author</th><th data-key="language">Language</th><th data-key="collection">Collection</th></tr></thead><tbody>${arr.map(b=>`<tr data-text="${safe([b.title,b.author,b.language,b.category,b.collection].join(" "))}"><td class="row-index">${String(b.index).padStart(3,"0")}</td><td>${safe(b.title)}</td><td>${safe(b.author||"—")}</td><td>${safe(b.language)}</td><td>${safe(b.collection)}</td></tr>`).join("")}</tbody></table></div></section>`}).join("");
+ document.querySelectorAll(".local-search").forEach(inp=>inp.addEventListener("input",()=>localFilter(inp)));
+ document.querySelectorAll(".clear-local").forEach(btn=>btn.addEventListener("click",()=>{const i=btn.parentElement.querySelector("input");i.value="";localFilter(i)}));
+ document.querySelectorAll("th[data-key]").forEach(th=>th.addEventListener("click",()=>sortTable(th)));
+ document.querySelectorAll(".nav-btn").forEach(btn=>btn.addEventListener("click",()=>{document.querySelectorAll(".nav-btn").forEach(x=>x.classList.toggle("active",x===btn));$("#category").value=btn.dataset.category;apply();if(btn.dataset.category)document.querySelector(`.category-card[data-category="${CSS.escape(btn.dataset.category)}"]`)?.scrollIntoView({behavior:"smooth"});else window.scrollTo({top:0,behavior:"smooth"})}));
+}
+function localFilter(inp){const card=inp.closest(".category-card"),q=inp.value;let n=0;card.querySelectorAll("tbody tr").forEach(row=>{const ok=!q||score(row.dataset.text,q)>=.48;row.hidden=!ok;if(ok){n++;[...row.cells].forEach(td=>td.innerHTML=markText(td.textContent,q))}else [...row.cells].forEach(td=>td.innerHTML=safe(td.textContent))});card.querySelector(".local-count").textContent=n+" shown"}
+function sortTable(th){const table=th.closest("table"),idx=[...th.parentElement.children].indexOf(th),body=table.tBodies[0],asc=!th.classList.contains("asc");table.querySelectorAll("th").forEach(h=>h.classList.remove("asc","desc"));th.classList.add(asc?"asc":"desc");[...body.rows].sort((a,b)=>a.cells[idx].textContent.localeCompare(b.cells[idx].textContent,undefined,{numeric:true,sensitivity:"base"})*(asc?1:-1)).forEach(r=>body.appendChild(r))}
+function apply(){const q=$("#global-search").value,lang=$("#language").value,cat=$("#category").value;let n=0;document.querySelectorAll(".category-card").forEach(card=>{let visible=0;card.querySelectorAll("tbody tr").forEach(row=>{const cells=[...row.cells],ok=(!lang||cells[3].textContent===lang)&&(!cat||card.dataset.category===cat)&&(!q||score(row.dataset.text,q)>=.48);row.hidden=!ok;if(ok){visible++;n++;cells.forEach(td=>td.innerHTML=markText(td.textContent,q))}else cells.forEach(td=>td.innerHTML=safe(td.textContent))});card.hidden=visible===0;card.querySelector(".local-count").textContent=visible+" shown"});$("#status").textContent=`Showing ${n} of ${books.length} books${q?" · fuzzy search active":""}`}
+async function init(){try{const url=`https://api.github.com/repos/${OWNER}/${REPO}/git/trees/${BRANCH}?recursive=1`;const res=await fetch(url,{headers:{Accept:"application/vnd.github+json"}});if(!res.ok)throw new Error("The public catalogue source could not be reached (HTTP "+res.status+").");const data=await res.json();books=(data.tree||[]).filter(x=>x.type==="blob"&&/\.pdf$/i.test(x.path)).map(x=>record(x.path));if(!books.length)throw new Error("No book entries were found.");render();$("#status").textContent=`Showing all ${books.length} books`}catch(e){$("#catalogue").innerHTML=`<div class="error"><strong>Catalogue could not load.</strong><br>${safe(e.message)}<br><br>Check your internet connection and reload this page.</div>`;$("#status").textContent="Source unavailable"}}
+$("#global-search").addEventListener("input",apply);$("#language").addEventListener("change",apply);$("#category").addEventListener("change",()=>{document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("active",b.dataset.category===$("#category").value));apply()});$("#reset").addEventListener("click",()=>{$("#global-search").value="";$("#language").value="";$("#category").value="";document.querySelectorAll(".local-search").forEach(i=>i.value="");apply()});
+init();
+</script>
+</body></html>
